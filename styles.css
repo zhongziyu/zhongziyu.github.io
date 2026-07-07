@@ -81,7 +81,7 @@ nav a:hover {
 }
 
 .intro h1 {
-  margin: 0 0 18px;
+  margin: 0 0 clamp(28px, 4vw, 44px);
   font-size: clamp(48px, 10vw, 112px);
   line-height: 0.92;
   letter-spacing: 0;
