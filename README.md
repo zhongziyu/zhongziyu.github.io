@@ -22,7 +22,7 @@ https://zhongziyu.github.io
 复制 `articles/workspace-style-demo/` 可以创建一篇新文章。文章页适合放：
 
 - 正文推导与长图文解释
-- `canvas` / `svg` / WebGPU / WebGL 交互组件
+- `canvas` / `svg` / WebGL 交互组件
 - 每篇文章自己的 `script.js`
 - 每篇文章自己的数据文件
 - MathJax 或 KaTeX 公式渲染脚本
