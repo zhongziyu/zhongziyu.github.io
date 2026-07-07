@@ -149,12 +149,40 @@ nav a:hover {
   transition: color 180ms ease;
 }
 
-.entry-desc {
+.entry-copy {
   position: relative;
   z-index: 3;
-  max-width: 380px;
-  color: var(--muted);
+  display: grid;
+  gap: 14px;
+  max-width: 390px;
   transition: color 180ms ease;
+}
+
+.entry-subtitle {
+  color: var(--muted);
+  font-size: 15px;
+  font-weight: 650;
+  line-height: 1.35;
+  letter-spacing: 0;
+  transition: color 180ms ease;
+}
+
+.entry-quote {
+  display: grid;
+  gap: 12px;
+  color: color-mix(in srgb, var(--muted) 76%, var(--faint));
+  font-family: var(--serif, Georgia, "Times New Roman", serif);
+  font-size: 16px;
+  line-height: 1.6;
+  transition: color 180ms ease;
+}
+
+.entry-quote::before {
+  content: "";
+  width: 38px;
+  height: 1px;
+  background: color-mix(in srgb, var(--entry-accent) 44%, var(--line));
+  transition: background 180ms ease;
 }
 
 .article-entry strong {
@@ -209,10 +237,17 @@ nav a:hover {
 }
 
 .entry:hover .entry-kicker,
-.entry:hover .entry-desc,
+.entry:hover .entry-subtitle,
+.entry:hover .entry-quote,
 .entry:focus-visible .entry-kicker,
-.entry:focus-visible .entry-desc {
+.entry:focus-visible .entry-subtitle,
+.entry:focus-visible .entry-quote {
   color: color-mix(in srgb, var(--entry-ink) 78%, transparent);
+}
+
+.entry:hover .entry-quote::before,
+.entry:focus-visible .entry-quote::before {
+  background: color-mix(in srgb, var(--entry-ink) 62%, transparent);
 }
 
 .entry:hover strong,
@@ -323,7 +358,7 @@ nav a:hover {
   }
 
   .entry {
-    min-height: 230px;
+    min-height: 270px;
     padding: 22px;
   }
 
