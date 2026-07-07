@@ -195,9 +195,7 @@ nav a:hover {
   display: block;
   background-color: var(--tone);
   opacity: 0;
-  transition:
-    opacity 90ms ease,
-    background-color 360ms ease;
+  transition: opacity 90ms ease;
   transition-delay: calc(var(--i) * 18ms);
   animation-fill-mode: both;
 }
@@ -206,8 +204,8 @@ nav a:hover {
 .entry:focus-visible .mosaic i {
   opacity: 1;
   animation-name: tile-settle;
-  animation-duration: 520ms;
-  animation-delay: calc((var(--i) * 18ms) + 110ms);
+  animation-duration: 420ms;
+  animation-delay: calc(var(--i) * 18ms);
   animation-timing-function: ease;
 }
 
@@ -251,9 +249,12 @@ nav a:hover {
 }
 
 @keyframes tile-settle {
-  0%,
-  42% {
+  0% {
     background-color: var(--tone);
+  }
+
+  54% {
+    background-color: color-mix(in srgb, var(--tone) 34%, var(--tile-dark) 66%);
   }
 
   100% {
