@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="一个支持文章内 JavaScript 交互的长文模板。">
+  <title>可交互文章模板 / zhongziyu</title>
+  <link rel="stylesheet" href="../article.css">
+</head>
+<body>
+  <nav class="paper-nav" aria-label="站点导航">
+    <a href="../../">zhongziyu</a>
+    <a href="../">article</a>
+    <a href="../../toys/">toys</a>
+  </nav>
+
+  <header class="article-hero">
+    <div class="article-meta">
+      <span>article template</span>
+      <time datetime="2026-07-07">2026-07-07</time>
+    </div>
+    <h1>一个适合数学、AI 与交互解释的文章页</h1>
+    <p class="dek">
+      这篇文章是模板：它保留论文式长文的阅读节奏，同时允许在正文里嵌入小型 JavaScript 组件、canvas、SVG、公式和实验控件。
+    </p>
+    <div class="author-row">
+      <span>zhongziyu</span>
+      <span>·</span>
+      <span>notes, experiments, explanations</span>
+    </div>
+  </header>
+
+  <main class="article-frame">
+    <aside class="toc" aria-label="文章目录">
+      <strong>contents</strong>
+      <a href="#idea">设计目标</a>
+      <a href="#interactive">交互组件</a>
+      <a href="#extend">如何扩展</a>
+    </aside>
+
+    <article class="article-body">
+      <section id="idea">
+        <h2>设计目标</h2>
+        <p>
+          首页负责快速分流：读文章的人进入 <code>article</code>，想玩实验的人进入 <code>toys</code>。
+          文章页则负责慢下来，让推导、图表、旁注和交互实验可以自然地放在同一条叙事里。
+        </p>
+        <p>
+          这个模板不依赖构建工具。每篇文章都是一个独立目录，可以有自己的 <code>index.html</code>、
+          <code>script.js</code>、图片、数据文件或者 WebGL 代码。GitHub Pages 会直接托管这些静态资源。
+        </p>
+        <div class="callout">
+          后续如果要写数学文章，可以在页面里接入 MathJax 或 KaTeX；如果要写机制解释类文章，可以直接把小实验写成本页脚本。
+        </div>
+      </section>
+
+      <section id="interactive">
+        <h2>交互组件</h2>
+        <p>
+          下面是一个非常小的 canvas 例子。滑块会改变正弦曲线的频率；真实文章里可以把它替换成
+          attention pattern、embedding projection、shader preview 或者任何在线小实验。
+        </p>
+
+        <div class="interactive-panel">
+          <div class="control-row">
+            <label for="frequency">frequency</label>
+            <input id="frequency" type="range" min="1" max="12" value="4" step="1">
+            <output id="frequency-value" for="frequency">4</output>
+          </div>
+          <figure class="figure">
+            <canvas id="wave-canvas" width="900" height="360" aria-label="可交互正弦曲线"></canvas>
+            <figcaption class="figure-caption">Figure 1: 文章内 JavaScript 控件示例。</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="extend">
+        <h2>如何扩展</h2>
+        <p>
+          写新文章时，复制这个目录即可。文章自己的脚本放在同目录的 <code>script.js</code>，
+          样式如果很通用就放进 <code>articles/article.css</code>，如果只服务于单篇文章就放在文章目录里。
+        </p>
+        <pre><code>articles/
+  my-new-note/
+    index.html
+    script.js
+    data.json</code></pre>
+      </section>
+    </article>
+
+    <aside class="side-note" aria-label="旁注">
+      <p>这个布局在桌面端保留左右栏：左侧目录，右侧旁注；移动端会自动变成单栏。</p>
+      <p>文章内 JS 推荐局部化，避免污染全局状态，后面文章多了也更好维护。</p>
+    </aside>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

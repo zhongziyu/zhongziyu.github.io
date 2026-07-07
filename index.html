@@ -3,89 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="zhongziyu 的个人主页，展示个人介绍、技术方向和项目链接。">
+  <meta name="description" content="zhongziyu 的个人主页：文章、shader 玩具、在线 AI 玩具与实验入口。">
   <title>zhongziyu</title>
-  <link rel="preconnect" href="https://github.com">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="#top" aria-label="zhongziyu 主页">zhongziyu</a>
-    <nav class="nav" aria-label="主导航">
-      <a href="#about">关于</a>
-      <a href="#projects">项目</a>
-      <a href="#contact">联系</a>
-    </nav>
-  </header>
+  <main class="home-shell">
+    <header class="home-header">
+      <p class="mono">zhongziyu.github.io</p>
+      <nav aria-label="主导航">
+        <a href="articles/">article</a>
+        <a href="toys/">toys</a>
+        <a href="https://github.com/zhongziyu">github</a>
+      </nav>
+    </header>
 
-  <main id="top">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <p class="eyebrow">Personal Homepage</p>
-        <h1 id="hero-title">你好，我是 zhongziyu。</h1>
-        <p class="lead">
-          我关注软件开发、人工智能应用和高效工具，希望把想法做成真正可用的产品。
-        </p>
-        <div class="actions" aria-label="主要链接">
-          <a class="button primary" href="https://github.com/zhongziyu">GitHub</a>
-          <a class="button secondary" href="#projects">查看项目</a>
-        </div>
-      </div>
-
-      <figure class="profile">
-        <img src="https://github.com/zhongziyu.png" alt="zhongziyu 的 GitHub 头像" width="320" height="320">
-        <figcaption>Building, learning, shipping.</figcaption>
-      </figure>
-    </section>
-
-    <section class="section" id="about" aria-labelledby="about-title">
-      <div class="section-heading">
-        <p class="eyebrow">About</p>
-        <h2 id="about-title">关于我</h2>
-      </div>
+    <section class="intro" aria-labelledby="page-title">
+      <h1 id="page-title">zhongziyu</h1>
       <p>
-        这是我的第一个 GitHub Pages 主页。后续可以继续加入简历、博客、作品集、项目演示和联系方式。
+        一个尽量轻的个人入口页。这里放文章、shader 小实验、在线 AI 玩具，以及一些值得反复玩的想法。
       </p>
-      <div class="skill-list" aria-label="技术方向">
-        <span>Python</span>
-        <span>JavaScript</span>
-        <span>Web</span>
-        <span>AI Tools</span>
-        <span>Automation</span>
-      </div>
     </section>
 
-    <section class="section" id="projects" aria-labelledby="projects-title">
-      <div class="section-heading">
-        <p class="eyebrow">Work</p>
-        <h2 id="projects-title">精选项目</h2>
-      </div>
-      <div class="project-grid">
-        <article class="project-card">
-          <h3>个人主页</h3>
-          <p>使用 GitHub Pages 托管的静态个人网站，用来展示个人介绍和项目入口。</p>
-          <a href="https://github.com/zhongziyu/zhongziyu.github.io">查看仓库</a>
-        </article>
-        <article class="project-card">
-          <h3>学习笔记</h3>
-          <p>整理技术学习、实践经验和问题记录，让知识可以复用和迭代。</p>
-          <a href="https://github.com/zhongziyu">前往 GitHub</a>
-        </article>
-        <article class="project-card">
-          <h3>工具实验</h3>
-          <p>尝试把重复工作自动化，探索 AI、脚本和网页工具在日常工作中的结合。</p>
-          <a href="https://github.com/zhongziyu?tab=repositories">查看更多</a>
-        </article>
-      </div>
+    <section class="entry-grid" aria-label="站点入口">
+      <a class="entry article-entry" href="articles/">
+        <span class="entry-kicker">01</span>
+        <strong>article</strong>
+        <span>数学、AI、工程笔记。长文页面支持目录、图表、公式与文章内 JavaScript 交互。</span>
+      </a>
+
+      <a class="entry toy-entry" href="toys/">
+        <span class="entry-kicker">02</span>
+        <strong>toys</strong>
+        <span>shader playground、在线 AI 小工具、可视化实验和一次性灵感原型。</span>
+      </a>
     </section>
 
-    <section class="section contact" id="contact" aria-labelledby="contact-title">
-      <div>
-        <p class="eyebrow">Contact</p>
-        <h2 id="contact-title">欢迎交流</h2>
-        <p>可以从 GitHub 找到我，也可以后续在这里补充邮箱、博客或社交链接。</p>
-      </div>
-      <a class="button primary" href="https://github.com/zhongziyu">访问 GitHub</a>
+    <section class="updates" aria-labelledby="updates-title">
+      <h2 id="updates-title">recent</h2>
+      <ol>
+        <li>
+          <a href="articles/workspace-style-demo/">可交互文章模板</a>
+          <time datetime="2026-07-07">2026-07-07</time>
+        </li>
+        <li>
+          <a href="toys/shader-playground/">Shader Playground</a>
+          <time datetime="2026-07-07">2026-07-07</time>
+        </li>
+        <li>
+          <a href="toys/ai-playground/">AI Toy Skeleton</a>
+          <time datetime="2026-07-07">2026-07-07</time>
+        </li>
+      </ol>
     </section>
   </main>
 </body>
