@@ -198,13 +198,14 @@ nav a:hover {
   transition:
     opacity 150ms ease,
     background-color 420ms ease;
-  transition-delay: calc(var(--i) * 18ms);
+  transition-delay: calc(var(--r) * 18ms);
 }
 
 .entry:hover .mosaic i,
 .entry:focus-visible .mosaic i {
   background-color: var(--tile-dark);
   opacity: 1;
+  transition-delay: calc(var(--i) * 18ms);
 }
 
 .entry:hover .entry-kicker,
