@@ -3,28 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="一个轻量 WebGL shader 玩具。">
-  <title>Shader Playground / zhongziyu</title>
+  <meta name="description" content="一个轻量 WebGL fragment shader 实验台。">
+  <title>Shader Lab / zhongziyu</title>
   <link rel="stylesheet" href="../toy.css">
 </head>
 <body>
   <main class="toy-shell">
     <nav class="toy-nav" aria-label="站点导航">
       <a href="../../">zhongziyu</a>
-      <a href="../">toys</a>
-      <a href="../../articles/">article</a>
+      <a href="../">Toys</a>
+      <a href="../../articles/">Articles</a>
     </nav>
 
     <header class="toy-header">
-      <h1>Shader Playground</h1>
-      <p>一个最小 WebGL fragment shader 玩具。后面可以把 shader 编辑器、预设、截图导出都接到这个页面上。</p>
+      <h1>Shader Lab</h1>
+      <p>一个最小 WebGL fragment shader 实验台。它现在只做一件事：保持干净、流畅，并给后续 shader 编辑器、预设和截图导出留下位置。</p>
     </header>
 
     <section class="stage" aria-label="Shader 预览">
       <canvas id="shader-canvas"></canvas>
       <div class="toolbar">
-        <label>speed <input id="speed" type="range" min="0" max="2" step="0.01" value="1"></label>
-        <span id="status">running</span>
+        <label>Speed <input id="speed" type="range" min="0" max="2" step="0.01" value="1"></label>
+        <span id="status">Running</span>
       </div>
     </section>
   </main>

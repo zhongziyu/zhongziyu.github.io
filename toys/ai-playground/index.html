@@ -3,31 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="一个在线 AI 玩具页面骨架。">
-  <title>AI Toy Skeleton / zhongziyu</title>
+  <meta name="description" content="一个轻量 prompt 实验页面。">
+  <title>AI Prompt Lab / zhongziyu</title>
   <link rel="stylesheet" href="../toy.css">
 </head>
 <body>
   <main class="toy-shell">
     <nav class="toy-nav" aria-label="站点导航">
       <a href="../../">zhongziyu</a>
-      <a href="../">toys</a>
-      <a href="../../articles/">article</a>
+      <a href="../">Toys</a>
+      <a href="../../articles/">Articles</a>
     </nav>
 
     <header class="toy-header">
-      <h1>AI Toy Skeleton</h1>
-      <p>一个先在前端本地运行的 AI 玩具骨架。后面可以接入自己的 API、边缘函数或静态推理 demo。</p>
+      <h1>AI Prompt Lab</h1>
+      <p>一个轻量 prompt 实验页面。当前版本在前端本地运行，用来打磨交互结构；后续可以接入自己的 API、边缘函数或静态推理演示。</p>
     </header>
 
     <div class="ai-panel">
       <section>
-        <label for="prompt">prompt</label>
-        <textarea id="prompt">把这个想法压缩成一个适合主页展示的项目标题：数学、shader、AI 小玩具。</textarea>
-        <button id="run">run toy</button>
+        <label for="prompt">Prompt</label>
+        <textarea id="prompt">把这个想法压缩成一个适合个人网站展示的项目标题：数学、shader、AI 小工具。</textarea>
+        <button id="run">Run</button>
       </section>
       <section>
-        <label>output</label>
+        <label>Output</label>
         <div class="output" id="output">等待输入。</div>
       </section>
     </div>

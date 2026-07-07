@@ -20,7 +20,7 @@
       .filter(Boolean);
 
     output.textContent = [
-      "本地占位输出：",
+      "本地实验输出：",
       "",
       "标题候选：Interactive Notes & Tiny Tools",
       "关键词：" + words.slice(0, 8).join(" / "),

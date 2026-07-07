@@ -51,7 +51,7 @@
 
     ctx.fillStyle = "#171717";
     ctx.font = "16px SFMono-Regular, Consolas, monospace";
-    ctx.fillText("sinusoid frequency = " + frequency, 24, 34);
+    ctx.fillText("Sinusoid frequency = " + frequency, 24, 34);
   }
 
   slider.addEventListener("input", draw);

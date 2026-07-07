@@ -3,36 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="一个支持文章内 JavaScript 交互的长文模板。">
-  <title>可交互文章模板 / zhongziyu</title>
+  <meta name="description" content="一篇支持文章内 JavaScript 交互的长文写作环境。">
+  <title>交互式写作环境 / zhongziyu</title>
   <link rel="stylesheet" href="../article.css">
 </head>
 <body>
   <nav class="paper-nav" aria-label="站点导航">
     <a href="../../">zhongziyu</a>
-    <a href="../">article</a>
-    <a href="../../toys/">toys</a>
+    <a href="../">Articles</a>
+    <a href="../../toys/">Toys</a>
   </nav>
 
   <header class="article-hero">
     <div class="article-meta">
-      <span>article template</span>
+      <span>Interactive Article</span>
       <time datetime="2026-07-07">2026-07-07</time>
     </div>
-    <h1>一个适合数学、AI 与交互解释的文章页</h1>
+    <h1>交互式写作环境</h1>
     <p class="dek">
-      这篇文章是模板：它保留论文式长文的阅读节奏，同时允许在正文里嵌入小型 JavaScript 组件、canvas、SVG、公式和实验控件。
+      这是本站长文的基本形态：保留论文式阅读节奏，同时允许在正文中嵌入 JavaScript、canvas、SVG、公式和实验控件。
     </p>
     <div class="author-row">
       <span>zhongziyu</span>
       <span>·</span>
-      <span>notes, experiments, explanations</span>
+      <span>Notes, experiments, explanations</span>
     </div>
   </header>
 
   <main class="article-frame">
     <aside class="toc" aria-label="文章目录">
-      <strong>contents</strong>
+      <strong>Contents</strong>
       <a href="#idea">设计目标</a>
       <a href="#interactive">交互组件</a>
       <a href="#extend">如何扩展</a>
@@ -42,11 +42,11 @@
       <section id="idea">
         <h2>设计目标</h2>
         <p>
-          首页负责快速分流：读文章的人进入 <code>article</code>，想玩实验的人进入 <code>toys</code>。
-          文章页则负责慢下来，让推导、图表、旁注和交互实验可以自然地放在同一条叙事里。
+          首页负责快速分流：读文章的人进入 <code>Articles</code>，想玩实验的人进入 <code>Toys</code>。
+          文章页则负责慢下来，让推导、图表、旁注和交互实验自然地放在同一条叙事里。
         </p>
         <p>
-          这个模板不依赖构建工具。每篇文章都是一个独立目录，可以有自己的 <code>index.html</code>、
+          这个页面不依赖构建工具。每篇文章都是一个独立目录，可以有自己的 <code>index.html</code>、
           <code>script.js</code>、图片、数据文件或者 WebGL 代码。GitHub Pages 会直接托管这些静态资源。
         </p>
         <div class="callout">
@@ -57,19 +57,19 @@
       <section id="interactive">
         <h2>交互组件</h2>
         <p>
-          下面是一个非常小的 canvas 例子。滑块会改变正弦曲线的频率；真实文章里可以把它替换成
+          下面是一个非常小的 canvas 例子。滑块会改变正弦曲线的频率；在正式文章里，可以把它替换成
           attention pattern、embedding projection、shader preview 或者任何在线小实验。
         </p>
 
         <div class="interactive-panel">
           <div class="control-row">
-            <label for="frequency">frequency</label>
+            <label for="frequency">Frequency</label>
             <input id="frequency" type="range" min="1" max="12" value="4" step="1">
             <output id="frequency-value" for="frequency">4</output>
           </div>
           <figure class="figure">
             <canvas id="wave-canvas" width="900" height="360" aria-label="可交互正弦曲线"></canvas>
-            <figcaption class="figure-caption">Figure 1: 文章内 JavaScript 控件示例。</figcaption>
+            <figcaption class="figure-caption">Figure 1: 一个嵌入正文的 JavaScript 控件。</figcaption>
           </figure>
         </div>
       </section>

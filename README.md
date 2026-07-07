@@ -1,6 +1,6 @@
 # zhongziyu.github.io
 
-zhongziyu 的 GitHub Pages 个人主页。
+zhongziyu 的 GitHub Pages 个人网站，用来整理文章、交互解释和小型网页实验。
 
 访问地址：
 
@@ -10,9 +10,9 @@ https://zhongziyu.github.io
 
 ## Structure
 
-- `index.html`: 极简入口页，分流到 article 与 toys。
-- `articles/`: 文章索引与长文模板，支持文章内 JavaScript、canvas、SVG、数据文件等。
-- `toys/`: shader、AI 小玩具、可视化实验等独立页面。
+- `index.html`: 极简入口页，分流到 Articles 与 Toys。
+- `articles/`: 文章索引与长文页面，支持文章内 JavaScript、canvas、SVG、数据文件等。
+- `toys/`: shader、AI 小工具、可视化实验等独立页面。
 - `shared/`: 多页面共享样式。
 
 本项目是纯静态站点，不需要构建工具。每篇文章或 toy 都可以放在自己的目录里，并用局部 `script.js` 管理交互。
