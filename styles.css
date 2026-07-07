@@ -112,11 +112,7 @@ nav a:hover {
   text-decoration: none;
   isolation: isolate;
   overflow: hidden;
-  transition: color 220ms ease, transform 220ms ease;
-}
-
-.entry:hover {
-  transform: translateY(-2px);
+  transition: color 220ms ease;
 }
 
 .entry::after {
@@ -150,7 +146,7 @@ nav a:hover {
   margin-bottom: 14px;
   font-size: clamp(34px, 5vw, 56px);
   line-height: 1;
-  transition: color 180ms ease, transform 220ms ease;
+  transition: color 180ms ease;
 }
 
 .entry-desc {
@@ -168,6 +164,9 @@ nav a:hover {
 .article-entry {
   --entry-accent: var(--article);
   --entry-ink: #f2fff9;
+  --tile-light: #bfe7db;
+  --tile-mid: #48a58c;
+  --tile-dark: var(--article);
 }
 
 .toy-entry strong {
@@ -177,6 +176,9 @@ nav a:hover {
 .toy-entry {
   --entry-accent: var(--toy);
   --entry-ink: #fff7ed;
+  --tile-light: #f1cfaa;
+  --tile-mid: #d17a2f;
+  --tile-dark: var(--toy);
 }
 
 .mosaic {
@@ -191,21 +193,22 @@ nav a:hover {
 
 .mosaic i {
   display: block;
-  background:
-    linear-gradient(135deg, color-mix(in srgb, var(--entry-accent) 92%, #ffffff 8%), var(--entry-accent));
+  background-color: var(--tone);
   opacity: 0;
-  transform: scale(0.12);
-  transform-origin: center;
   transition:
-    opacity 120ms ease,
-    transform 260ms cubic-bezier(0.19, 1, 0.22, 1);
+    opacity 90ms ease,
+    background-color 360ms ease;
   transition-delay: calc(var(--i) * 18ms);
+  animation-fill-mode: both;
 }
 
 .entry:hover .mosaic i,
 .entry:focus-visible .mosaic i {
   opacity: 1;
-  transform: scale(1.04);
+  animation-name: tile-settle;
+  animation-duration: 520ms;
+  animation-delay: calc((var(--i) * 18ms) + 110ms);
+  animation-timing-function: ease;
 }
 
 .entry:hover .entry-kicker,
@@ -218,7 +221,6 @@ nav a:hover {
 .entry:hover strong,
 .entry:focus-visible strong {
   color: var(--entry-ink);
-  transform: translateX(2px);
 }
 
 .entry-arrow {
@@ -235,19 +237,28 @@ nav a:hover {
   font-size: 20px;
   line-height: 1;
   opacity: 0;
-  transform: translateX(-10px);
-  transition: opacity 200ms ease 180ms, transform 240ms ease 180ms;
+  transition: opacity 200ms ease 180ms;
 }
 
 .entry:hover .entry-arrow,
 .entry:focus-visible .entry-arrow {
   opacity: 1;
-  transform: translateX(0);
 }
 
 .entry:focus-visible {
   outline: 2px solid var(--entry-accent);
   outline-offset: 4px;
+}
+
+@keyframes tile-settle {
+  0%,
+  42% {
+    background-color: var(--tone);
+  }
+
+  100% {
+    background-color: var(--tile-dark);
+  }
 }
 
 .updates {
@@ -346,10 +357,7 @@ nav a:hover {
   .entry strong,
   .entry-arrow,
   .mosaic i {
+    animation: none;
     transition: none;
-  }
-
-  .entry:hover {
-    transform: none;
   }
 }
