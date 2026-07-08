@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CartPole Lab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="lab-shell">
+    <header class="lab-header">
+      <a href="../" class="back-link">Toys</a>
+      <div>
+        <p class="eyebrow">Local PPO training / Rust + WASM + Candle</p>
+        <h1>CartPole Lab</h1>
+      </div>
+      <div class="status-pill" id="status">Booting</div>
+    </header>
+
+    <section class="lab-grid">
+      <section class="stage-panel" aria-label="CartPole preview">
+        <div class="stage-toolbar">
+          <span>Live preview</span>
+          <div class="stage-actions">
+            <button id="preview-play-button" type="button">Start</button>
+            <button id="preview-autoplay-button" type="button" class="is-on">Auto play</button>
+            <div class="segmented-control" role="group" aria-label="Preview action mode">
+              <button id="preview-sample-button" type="button" class="is-active">Sample</button>
+              <button id="preview-greedy-button" type="button">Greedy</button>
+            </div>
+            <div class="segmented-control" role="group" aria-label="Preview policy">
+              <button id="preview-latest-button" type="button" class="is-active">Latest</button>
+              <button id="preview-best-button" type="button">Best</button>
+            </div>
+          </div>
+        </div>
+        <canvas id="cartpole-canvas" width="960" height="540"></canvas>
+      </section>
+
+      <aside class="control-panel" aria-label="Training controls">
+        <div class="panel-section">
+          <h2>Training</h2>
+          <div class="button-row">
+            <button id="start-button" type="button">Start</button>
+            <button id="pause-button" type="button">Pause</button>
+            <button id="reset-button" type="button">Reset</button>
+          </div>
+        </div>
+
+        <div class="panel-section checkpoint-section">
+          <h2>Checkpoint</h2>
+          <div class="button-row">
+            <button id="load-policy-button" type="button">Load best</button>
+            <button id="clear-policy-button" type="button">Clear</button>
+          </div>
+          <p id="checkpoint-status" class="checkpoint-status">No saved policy</p>
+        </div>
+
+        <div class="panel-section metrics-list" id="metrics-list">
+          <h2>Metrics</h2>
+          <dl>
+            <div><dt>Iteration</dt><dd id="metric-iteration">0</dd></div>
+            <div><dt>Total steps</dt><dd id="metric-steps">0</dd></div>
+            <div><dt>Mean reward</dt><dd id="metric-reward">0.00</dd></div>
+            <div><dt>Mean length</dt><dd id="metric-length">0.00</dd></div>
+            <div><dt>Entropy</dt><dd id="metric-entropy">0.000</dd></div>
+            <div><dt>Steps / sec</dt><dd id="metric-sps">0</dd></div>
+          </dl>
+        </div>
+
+        <div class="panel-section">
+          <h2>Policy</h2>
+          <pre id="policy-output">Waiting for policy snapshot...</pre>
+        </div>
+      </aside>
+    </section>
+
+    <section class="chart-panel" aria-label="Training history">
+      <div class="chart-toolbar">
+        <span>Training history</span>
+        <div class="segmented-control" role="group" aria-label="History view">
+          <button id="history-rolling-button" type="button" class="is-active">Rolling</button>
+          <button id="history-full-button" type="button">From 0</button>
+        </div>
+      </div>
+      <canvas id="history-canvas" width="1200" height="260"></canvas>
+    </section>
+  </main>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>

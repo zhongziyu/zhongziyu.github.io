@@ -1,0 +1,7 @@
+{
+  "name": "cartpole-lab",
+  "algorithm": "ppo",
+  "backend": "rust-wasm-candle",
+  "builtAt": "2026-07-08T08:01:48Z",
+  "webOnly": true
+}
